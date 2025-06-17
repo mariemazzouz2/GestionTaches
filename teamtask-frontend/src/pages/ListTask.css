@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --color-text: #fff;
+  --color-background: linear-gradient(to right bottom, #ffb88e, #ea5753);
+  --color-container: linear-gradient(to right bottom, rgba(255, 184, 142, 0.44), rgba(255, 255, 255, 0.5));
+  --color-list: rgba(234, 87, 83, 0.7);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  font-size: 1.6rem;
+  place-items: center;
+  background: var(--color-background);
+  font-family: Rockwell, "Courier New", Courier, Georgia, Times,
+    "Times New Roman", serif;
+}
+
+.listtask-container {
+  width: 80vw; /* Avant : 40vw */
+  max-width: 1200px;
+  padding: 4rem 5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: relative;
+  border-radius: 3rem;
+  background: var(--color-container);
+  min-height: 90vh;
+  box-sizing: border-box;
+}
+
+
+.listtask-container::-webkit-scrollbar {
+  width: 0;
+}
+
+.listtask-container::before {
+  content: "";
+  top: -10rem;
+  left: -10rem;
+  width: 40rem;
+  height: 40rem;
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.listtask-container::after {
+  content: "";
+  bottom: 0rem;
+  right: -10rem;
+  width: 40rem;
+  height: 40rem;
+  margin-bottom: -25rem;
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 185, 142, 0.6);
+}
+
+.listtask-container h1 {
+  top: 0;
+  margin: 0;
+  padding: 6rem 0 3rem 0;
+  position: sticky;
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: 3rem;
+  box-shadow: 0 7px 2rem #ea5753;
+  background: rgba(234, 87, 83, 0.7);
+}
+
+/* La liste des tasks sera en colonnes */
+.listtask-list {
+  margin: 0;
+  gap: 1rem;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.listtask-card {
+  width: 300px;
+  text-align: center;
+  color: var(--color-text);
+  border-radius: 3rem;
+  background: var(--color-list);
+  padding: 1.5rem;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+/* Style pour le select */
+.listtask-card select {
+  margin-left: 0.5rem;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  border: none;
+  font-size: 1.4rem;
+}
+.logout-button {
+  position: relative; /* ou fixed si tu veux qu’il reste visible au scroll */
+  margin-top: 2rem; /* espace avec le haut */
+  margin-left: 2rem; /* espace avec le côté gauche */
+  background-color: #ea5753;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 10;
+}
+
+.logout-button:hover {
+  background-color: #ffb88e;
+  color: #333;
+}

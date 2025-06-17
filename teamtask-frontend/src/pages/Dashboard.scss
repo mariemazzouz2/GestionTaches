@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+$color-text: #fff;
+$color-background: linear-gradient(to right bottom, #ffb88e, #ea5753);
+$color-container: linear-gradient(to right bottom, rgba(255, 184, 142, 0.44), rgba(255, 255, 255, 0.5));
+$color-list: rgba(234, 87, 83, 0.7);
+$sidebar-bg: rgba(0, 0, 0, 0.4);
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-size: 1.6rem;
+  background: $color-background;
+  font-family: Rockwell, "Courier New", Courier, Georgia, Times, "Times New Roman", serif;
+}
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 22rem;
+  padding: 2rem;
+  background: $sidebar-bg;
+  color: $color-text;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  h2 {
+    text-align: center;
+    font-size: 2.4rem;
+    border-bottom: 2px solid $color-text;
+    padding-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    li {
+      cursor: pointer;
+      padding: 1rem;
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      transition: background 0.3s;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+}
+
+.content {
+  flex-grow: 1;
+  padding: 4rem;
+  position: relative;
+  background: $color-container;
+  overflow-y: auto;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  &::before {
+    top: -10rem;
+    left: -10rem;
+    width: 40rem;
+    height: 40rem;
+    background: rgba(255, 255, 255, 0.35);
+  }
+
+  &::after {
+    bottom: -25rem;
+    right: -10rem;
+    width: 40rem;
+    height: 40rem;
+    background: rgba(255, 185, 142, 0.6);
+  }
+
+  h1 {
+    z-index: 1;
+    position: relative;
+    margin-bottom: 2rem;
+    text-align: center;
+    background: rgba(234, 87, 83, 0.7);
+    padding: 2rem;
+    border-radius: 2rem;
+    color: $color-text;
+    box-shadow: 0 7px 2rem #ea5753;
+  }
+
+  .add-task-btn {
+    display: block;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background: #ea5753;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background: #d1453b;
+    }
+  }
+
+  ol {
+    z-index: 1;
+    position: relative;
+    margin: 0 auto;
+    max-width: 60rem;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    counter-reset: my-counter;
+
+    li {
+      padding: 1.5rem;
+      border-radius: 2rem;
+      background: $color-list;
+      color: $color-text;
+      counter-increment: my-counter;
+      font-size: 1.6rem;
+
+      &::before {
+        content: counter(my-counter) ". ";
+        font-weight: bold;
+      }
+    }
+  }
+  .btn-small {
+  margin-right: 1rem;
+  padding: 0.4rem 1rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  color: white;
+  transition: background 0.3s;
+}
+
+.btn-edit {
+  background-color: #4caf50;
+}
+.btn-edit:hover {
+  background-color: #3a9d3a;
+}
+
+.btn-delete {
+  background-color: #f44336;
+}
+.btn-delete:hover {
+  background-color: #c63727;
+}
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background-color: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+
+  th, td {
+    padding: 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #ea5753;
+    color: white;
+    font-size: 1.6rem;
+  }
+
+  td {
+    font-size: 1.4rem;
+  }
+
+  tr:hover {
+    background-color: #f9f9f9;
+  }
+}
+
+}

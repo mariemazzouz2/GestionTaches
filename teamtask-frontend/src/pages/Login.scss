@@ -1,0 +1,161 @@
+/* Login.scss */
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+  color: #333;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 20px; // anciennement: padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+
+.login-card {
+  background: white;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.login-left,
+.login-right {
+  flex: 1;
+  padding: 40px 30px;
+}
+
+.login-left {
+  background-color: #fff;
+}
+
+.login-left img {
+  display: block;
+  margin: 0 auto 30px auto;
+  width: 180px;
+}
+
+.login-left h4 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+  color: #dd3675;
+}
+
+.login-left form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-left label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.login-left input {
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1.5px solid #ddd;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.login-left input:focus {
+  outline: none;
+  border-color: #dd3675;
+  box-shadow: 0 0 8px rgba(221, 54, 117, 0.4);
+}
+
+.login-left button {
+  background: linear-gradient(to right, #ee7724, #d8363a, #dd3675);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-left button:hover {
+  background: linear-gradient(to right, #b44593, #dd3675, #d8363a);
+}
+
+.login-left .forgot-password {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #999;
+  cursor: pointer;
+}
+
+.login-left .forgot-password:hover {
+  color: #dd3675;
+}
+
+.login-right {
+  background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 30px;
+  font-size: 16px;
+}
+
+.login-right h4 {
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.login-right p {
+  line-height: 1.5;
+}
+.forgot-password {
+  display: flex;
+  justify-content: center; /* centre horizontalement */
+  margin-top: 15px;
+}
+
+.register-button {
+  cursor: pointer;
+  color: white;
+  background-color: #dd3675;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+
+  &:hover {
+    background-color: #b44593;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .login-card {
+    flex-direction: column;
+  }
+
+  .login-right {
+    padding: 30px;
+  }
+  
+}
